@@ -1,0 +1,193 @@
+/**
+ * Copyright 2025 Beijing Volcano Engine Technology Co., Ltd. All Rights Reserved.
+ * SPDX-license-identifier: BSD-3-Clause
+ */
+
+.card {
+    display: grid;
+    position: relative;
+    width: 370px;
+    height: 128px;
+
+    .avatar {
+        position: absolute;
+        box-sizing: border-box;
+        border-radius: 50% 0% 0 50%;
+        width: 128px;
+        height: 128px;
+        margin-right: 16px;
+        border-left: 1px solid #EAEDF1;
+        border-top: 1px solid #EAEDF1;
+        border-bottom: 1px solid #EAEDF1;
+        background-color: white;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .doubao-gif {
+            height: 127px;
+            transform: scale(0.95);
+        }
+    }
+    
+    .body {
+        width: 100%;
+        height: 100%;
+        padding: 16px 16px 16px calc(64px + 16px);
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--line-color-border-2, #EAEDF1);
+        box-sizing: border-box;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+        transform:translateX(64px);
+    }
+
+    .body::after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    .body::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+        background-color: #EAEDF1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    .text-wrapper {
+        position: absolute;
+        left: 128px;
+        margin-left: 16px;
+        width: max-content;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 4;
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .title {
+                color: var(--text-color-text-1, #0C0D0E);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 22px;
+            }
+
+            .description {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #737A87;
+            }
+        }
+    }
+
+    .corner {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        width: 0px;
+        height: 0px;
+        border-right: 10px solid transparent;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #EAEDF1;
+        z-index: 3;
+        transform: translateX(64px) rotate(-45deg);
+    }
+
+    .corner::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+        border-right: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid white;
+        transform: translate(7px, -8px);
+    }
+
+    .corner::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 4px;
+        width: 5px;
+        height: 1px;
+        background-color: #EAEDF1;
+        transform: rotate(-90deg);
+    }
+}
+
+.button {
+    position: relative;
+    width: max-content !important;
+    height: 24px !important;
+    margin-top: 8px;
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    background: linear-gradient(77.86deg, rgba(229, 242, 255, 0.5) -3.23%, rgba(217, 229, 255, 0.5) 51.11%, rgba(246, 226, 255, 0.5) 98.65%);
+    cursor: pointer;
+
+    .button-text {
+        background: linear-gradient(77.86deg, #3384FF -3.23%, #014BDE 51.11%, #A945FB 98.65%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    border-radius: 3px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 22px;
+    background: white;
+    z-index: -1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 26px;
+    background: linear-gradient(90deg, rgba(0, 139, 255, 0.5) 0%, rgba(0, 98, 255, 0.5) 49.5%, rgba(207, 92, 255, 0.5) 100%);
+    z-index: -2;
+}
+
+.button:hover {
+    background: linear-gradient(77.86deg, rgba(200, 220, 255, 0.7) -3.23%, rgba(190, 210, 255, 0.7) 51.11%, rgba(230, 210, 255, 0.7) 98.65%);
+}
+
+.button:active {
+    background: linear-gradient(77.86deg, rgba(170, 190, 255, 0.9) -3.23%, rgba(160, 180, 255, 0.9) 51.11%, rgba(210, 180, 255, 0.9) 98.65%);
+}
